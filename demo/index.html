@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessibility widget — demo</title>
+    <style>
+      :root { font-size: 100%; }
+      body {
+        margin: 0;
+        padding: 2rem 1rem 6rem;
+        font: 400 1.05rem/1.5 system-ui, sans-serif;
+        background: linear-gradient(180deg, #0b0a08, #1a1711);
+        color: #efe8dc;
+      }
+      main { max-width: 42rem; margin: 0 auto; }
+      h1 { font-size: 2.4rem; line-height: 1.05; margin: 0 0 1rem; }
+      a { color: #f6b43a; text-decoration: none; }
+      .card { padding: 1.25rem; margin-block: 1rem; border: 1px solid rgb(255 255 255 / .12); border-radius: .75rem; background: rgb(255 255 255 / .04); }
+      .spin { display: inline-block; width: 1.4rem; height: 1.4rem; border: 3px solid #f6b43a; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      button.site { padding: .6rem 1rem; border: 0; border-radius: .5rem; background: #f6b43a; color: #111; font: inherit; }
+      .en { direction: ltr; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>דף הדגמה לתפריט הנגישות</h1>
+      <p>הכפתור העגול בפינה פותח את התפריט. כל מתג משנה את הדף הזה: גודל טקסט, ניגודיות, <a href="#">הדגשת קישורים</a>, גופן, ריווח ועצירת אנימציות.</p>
+      <div class="card">
+        <p>אנימציה לבדיקה: <span class="spin" aria-hidden="true"></span></p>
+        <p><button class="site" type="button">כפתור של האתר</button> <a href="#">קישור רגיל</a></p>
+      </div>
+      <div class="card en" lang="en">
+        <h2>English block</h2>
+        <p>The same page, a paragraph in English with a <a href="#">link</a>. Text size and spacing affect it too.</p>
+      </div>
+      <p>הבחירות נשמרות ב‑localStorage וחלות שוב אחרי רענון.</p>
+    </main>
+
+    <script type="module">
+      import { mountAccessibilityWidget } from '../src/index.js';
+
+      const w = mountAccessibilityWidget({
+        statementUrl: '#statement',
+        onChange: (s) => console.log('a11y', s),
+      });
+      window.a11y = w;
+    </script>
+  </body>
+</html>
