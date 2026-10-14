@@ -11,7 +11,7 @@ A small accessibility menu for any website. One round button in a corner; behind
 
 Plus a reset and a link to the site's accessibility statement. Hebrew and English are built in; RTL follows the page.
 
-Zero dependencies, no build step, about 9 KB unminified. The menu renders in a shadow root, so the site's CSS cannot break it; the switches work by adding classes to `<html>`.
+Zero dependencies, no build step, under 20 KB of source. The menu renders in a shadow root, so the site's CSS cannot break it; the switches work by adding classes to `<html>`.
 
 > This widget does **not** make a site accessible. It gives visitors a few adjustments that the Israeli regulations (IS 5568 / WCAG 2.0 AA) and the public expect to find. The site's own semantics, keyboard support, contrast and statement still have to be right.
 
