@@ -22,7 +22,7 @@ Zero dependencies, no build step, under 20 KB of source. The menu renders in a s
 npm install ../accessibility_widget
 
 # or from GitHub, once pushed
-npm install github:andzhelo/accessibility-widget
+npm install github:andzhelo/accessibility_widget
 ```
 
 ## Use
